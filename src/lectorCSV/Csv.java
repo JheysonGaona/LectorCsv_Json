@@ -227,7 +227,7 @@ public class Csv {
                 if (inicio != 0) {
                     for (String palabraActual : diccionario) {
                         if (linea[3].toLowerCase().contains(palabraActual)) {
-                            // System.out.println(cont + " " + linea[1] + ", " + linea[5]);
+                            //System.out.println(cont /**+ " " + linea[1] + ", " + linea[5]**/);
                             String cord_uidCsv = linea[0];
                             String[] id_paperCsv = linea[1].split(";");
                             String source_xCsv = linea[2];
@@ -252,7 +252,7 @@ public class Csv {
                             boolean has_pmc_xml_parseCsv = Boolean.parseBoolean(linea[16]);
                             String full_text_fileCsv = linea[17];
                             String urlCsv = linea[18];
-
+                            
                             lista.add(new Csv(cord_uidCsv, id_paperCsv, source_xCsv,
                                     titleCsv, doiCsv, pmcidCsv, pubmed_idCsv, licenseCsv,
                                     abstract_paperCsv, publish_timeCsv, listAuthors, jorunalCsv,
@@ -265,6 +265,7 @@ public class Csv {
                 }
                 inicio++;
             }
+            System.out.println(cont);
             if (linea != null) {
                 lector.close();
             }
